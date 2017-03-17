@@ -57,12 +57,17 @@ class HTMLParser {
       let result = element.nodeValue
       if (element.nodeName !== '#text') {
         result = this.getAll(element)
+      } else {
+        result = result.replace(/^\s+|\s+$/g, '')
       }
 
       if (this.hasChild(element)) {
         for (let i = 0; i < element.childNodes.length; i++) {
           const child = element.childNodes[i]
-          result.childNodes.push(recursive(child))
+          const childResult = recursive(child)
+          if (childResult) {
+            result.childNodes.push(childResult)
+          }
         }
       }
 
