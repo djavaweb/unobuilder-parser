@@ -1,5 +1,5 @@
 import test from 'ava'
-import HTMLParser from '../index'
+import HTMLParser from '../src/index'
 
 var html = `
 <div id="test" class="test abc def" kind="row" editable style="background-color: red">
