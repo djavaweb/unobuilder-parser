@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Just test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+  <script src="index.js"></script>
+  <script lang="text/javascript">
+    var html = `
+    <div id="test" class="test abc def" kind="row" editable style="background-color: red">
+      <div class="abc" kind="column">
+        <img src="test" class="test" />
+        <span>Text</span>
+      </div>
+      test abarakadabara
+    <h1 class="momomo__hello momomo__hello-test">
+      hello    world baba
+    </h1>
+      <div class="uyt" kind="column">
+        <button>abc</button>
+      </div>
+    </div>
+    `
+
+    var a = new HTMLParser(html)
+    console.log(a)
+
+  </script>
+  </body>
+</html>

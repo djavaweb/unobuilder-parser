@@ -1,0 +1,23 @@
+{
+  "name": "unobuilder-parser",
+  "version": "0.0.1-alpha.1",
+  "main": "index.js",
+  "repository": "https://github.com/djavaweb/unobuilder-parser.git",
+  "author": "Djavaweb",
+  "scripts": {
+    "test": "ava --verbose"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "browser-env": "^2.0.25"
+  },
+  "ava": {
+    "require": [
+      "./test/helpers/setup-browser-env.js"
+    ],
+    "files": [
+      "./test/**.spec.js"
+    ]
+  }
+}
