@@ -1,3 +1,4 @@
+import cloneDeep from 'lodash.clonedeep'
 import { RandomUID, SelectorAttrId } from './utils'
 
 class HTMLParser {
@@ -78,7 +79,7 @@ class HTMLParser {
   }
 
   getAll (target, except = []) {
-    const result = Object.assign({}, this.result)
+    const result = cloneDeep(this.result)
     if (target.nodeName !== '#text') {
       result.id = RandomUID()
       result.dataObject.style = this.getStyle(target)

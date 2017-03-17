@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-  <script src="index.js"></script>
+  <script src="dist/unobuilder-parser.js"></script>
   <script lang="text/javascript">
     var html = `
     <div id="test" class="test abc def" kind="row" editable style="background-color: red">
@@ -24,7 +24,7 @@
     </div>
     `
 
-    var a = new HTMLParser(html)
+    var a = new UnoHtmlParser(html)
     console.log(a)
 
   </script>
