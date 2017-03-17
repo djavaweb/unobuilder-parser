@@ -22,9 +22,6 @@
     "require": [
       "babel-register",
       "./test/helpers/setup-browser-env.js"
-    ],
-    "files": [
-      "./test/**.spec.js"
     ]
   },
   "dependencies": {
