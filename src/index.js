@@ -1,3 +1,5 @@
+import { RandomUID, SelectorAttrId } from './utils'
+
 class HTMLParser {
   constructor(markup) {
     const state = {
@@ -78,11 +80,11 @@ class HTMLParser {
   getAll (target, except = []) {
     const result = Object.assign({}, this.result)
     if (target.nodeName !== '#text') {
-      result.id = 'babab'
+      result.id = RandomUID()
       result.dataObject.style = this.getStyle(target)
       result.dataObject.class = this.getClass(target)
       result.dataObject.attrs = this.getAttrs(target)
-      result.dataObject.attrs['data-uno-id'] = result.id
+      result.dataObject.attrs[SelectorAttrId] = result.id
       result.kind = this.getSpecialAttr('kind', target)
       result.label = this.getSpecialAttr('label', target)
     }

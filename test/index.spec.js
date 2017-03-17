@@ -1,5 +1,5 @@
-const test = require('ava')
-const HTMLParser = require('../index')
+import test from 'ava'
+import HTMLParser from '../index'
 
 var html = `
 <div id="test" class="test abc def" kind="row" editable style="background-color: red">
