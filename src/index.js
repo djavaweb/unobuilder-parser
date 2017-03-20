@@ -88,12 +88,13 @@ class HTMLParser {
     const result = cloneDeep(this.result)
     if (target.nodeName !== '#text') {
       result.id = RandomUID()
+      result.dataObject.ref = result.id.replace(/-/g, '')
       result.dataObject.style = this.getStyle(target)
       result.dataObject.class = this.getClass(target)
       result.dataObject.attrs = this.getAttrs(target)
       result.dataObject.attrs[SelectorAttrId] = result.id
       result.kind = this.getSpecialAttr('kind', target)
-      result.label = this.getSpecialAttr('label', target)
+      result.label = this.getSpecialAttr('label', target) || result.kind
       result.requiredParent = this.getSpecialAttr('required-parent', target) ? true : false
       result.tagName = target.tagName.toLowerCase()
     }
