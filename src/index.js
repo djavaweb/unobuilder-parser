@@ -27,6 +27,9 @@ class HTMLParser {
       id: '',
       tagName: '',
       domType: '',
+      domProps: {
+        innerHTML: ''
+      },
       selected: false,
       kind: undefined,
       label: undefined,
