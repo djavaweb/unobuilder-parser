@@ -15,7 +15,9 @@ class HTMLParser {
         class: {},
         style: {},
         attrs: {},
-        domProps: {}
+        domProps: {
+          innerHTML: ''
+        }
       },
       cssProperties: {
         large: state,
@@ -27,9 +29,6 @@ class HTMLParser {
       id: '',
       tagName: '',
       domType: '',
-      domProps: {
-        innerHTML: ''
-      },
       selected: false,
       kind: undefined,
       label: undefined,
