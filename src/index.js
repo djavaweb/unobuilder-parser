@@ -93,6 +93,7 @@ class HTMLParser {
       result.dataObject.attrs[SelectorAttrId] = result.id
       result.kind = this.getSpecialAttr('kind', target)
       result.label = this.getSpecialAttr('label', target)
+      result.tagName = target.tagName
     }
     return result
   }
