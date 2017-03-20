@@ -39,8 +39,7 @@ class HTMLParser {
       'kind',
       'label',
       'editable',
-      'required-parent',
-      'root'
+      'required-parent'
     ]
 
     return this.parse()
@@ -93,10 +92,8 @@ class HTMLParser {
       result.dataObject.attrs[SelectorAttrId] = result.id
       result.kind = this.getSpecialAttr('kind', target)
       result.label = this.getSpecialAttr('label', target)
-      result.requiredParent = this.getSpecialAttr('required-parent', target)
-        ? true
-        : false
-      result.tagName = target.tagName
+      result.requiredParent = this.getSpecialAttr('required-parent', target) ? true : false
+      result.tagName = target.tagName.toLowerCase()
     }
     return result
   }
