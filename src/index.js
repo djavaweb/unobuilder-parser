@@ -15,9 +15,7 @@ class HTMLParser {
         class: {},
         style: {},
         attrs: {},
-        domProps: {
-          innerHTML: ''
-        }
+        domProps: {}
       },
       cssProperties: {
         large: state,
