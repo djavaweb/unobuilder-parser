@@ -96,7 +96,7 @@ class HTMLParser {
       result.kind = this.getSpecialAttr('kind', target)
       result.editable = this.getSpecialAttr('editable', target)
       result.label = this.getSpecialAttr('label', target) || result.kind
-      result.requiredParent = this.getSpecialAttr('required-parent', target)
+      result.dataObject.domProps.requiredParent = this.getSpecialAttr('required-parent', target)
       result.tagName = target.tagName.toLowerCase()
     }
     return result
