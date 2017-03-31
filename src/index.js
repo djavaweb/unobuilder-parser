@@ -18,10 +18,10 @@ class HTMLParser {
         domProps: {}
       },
       cssProperties: {
-        large: state,
-        medium: state,
-        small: state,
-        tiny: state
+        large: cloneDeep(state),
+        medium: cloneDeep(state),
+        small: cloneDeep(state),
+        tiny: cloneDeep(state)
       },
       childNodes: [],
       id: '',
