@@ -27,7 +27,6 @@ class HTMLParser {
       id: '',
       editable: false,
       tagName: '',
-      domType: '',
       selected: false,
       kind: undefined,
       label: undefined,
@@ -88,16 +87,19 @@ class HTMLParser {
     const result = cloneDeep(this.result)
     if (target.nodeName !== '#text') {
       result.id = RandomUID()
-      result.dataObject.ref = result.id.replace(/-/g, '')
       result.dataObject.style = this.getStyle(target)
       result.dataObject.class = this.getClass(target)
       result.dataObject.attrs = this.getAttrs(target)
-      result.dataObject.attrs[SelectorAttrId] = result.id
+      result.tagName = target.tagName.toLowerCase()
       result.kind = this.getSpecialAttr('kind', target)
+
+      if (!result.kind) return result
+
+      result.dataObject.attrs[SelectorAttrId] = result.id
+      result.dataObject.ref = result.id.replace(/-/g, '')
       result.editable = target.hasAttribute('editable')
       result.label = this.getSpecialAttr('label', target) || result.kind
       result.requiredParent = target.hasAttribute('required-parent')
-      result.tagName = target.tagName.toLowerCase()
     }
     return result
   }
